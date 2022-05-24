@@ -1,0 +1,3 @@
+01_torch_intro/data/MNIST_DATASET
+05_embedding/data/wiki.ko.vec  
+05_embedding/data/glove.6B.100d.txt
