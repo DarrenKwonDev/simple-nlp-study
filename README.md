@@ -22,4 +22,5 @@ kaggle
 
 etc
 
-Korean Word2Vec https://word2vec.kr/search/
+[Korean Word2Vec](https://word2vec.kr/search/)  
+[english nlp processing and random_forrest](https://github.com/corazzon/KaggleStruggle/blob/master/word2vec-nlp-tutorial/tutorial-part-1.ipynb)
