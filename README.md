@@ -2,6 +2,11 @@
 
 torch, ml, nlp 맛보기
 
+## cautions
+
+ipython 사용하는 주피터 노트북에서 멀티프로세싱이 안되는 이슈가 있음. workaround가 있긴 한데 아래 글을 참고  
+https://github.com/ipython/ipython/issues/10894
+
 doc  
 https://github.com/RaRe-Technologies/gensim/wiki
 
