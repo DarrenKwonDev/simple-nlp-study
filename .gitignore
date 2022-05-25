@@ -3,3 +3,6 @@
 05_embedding/data/glove.6B.100d.txt
 06_nlp_processing/data/*.tsv
 __pycache__
+/**/*.csv
+/**/*.pdf
+/**/*.tsv
