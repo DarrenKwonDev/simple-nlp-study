@@ -31,5 +31,3 @@ corpus/raw/**/*.xlsx
 corpus/**/*.ko
 corpus/**/*.en
 nlp_preprocessing
-nmt
-simple-nmt

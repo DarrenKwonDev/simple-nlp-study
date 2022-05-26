@@ -61,3 +61,24 @@ wc -l ./corpus.shuf.*.tok.ko
     200000 ./corpus.shuf.valid.tok.ko
     1602418 total
 ```
+
+6. subword segmentation
+   - 관습적으로, vocab을 20000~30000개 정도 쌓는 것이 좋음. 영어는 분할이 더 되어 있으니 symbol을 50000 주었고, 한국어는 30000만 정도 주면 vocab이 2, 3만개 정도 됨.
+   - train에서 learn_bpe했으면 train에 apply해야 함. 통째로 learn_bpe하면 기타 valid, test까지 배우는 것이므로 반칙임
+   - train을 통해서 생성된 merge history 기준을 valid, test에도 진행해야 함.
+
+```bash
+# 영어.
+python ./subword-nmt/learn_bpe.py --input ../tokenized/corpus.shuf.train.tok.en --output bpe.en.model --symbols 50000 --verbose
+# 영어 apply bpe
+cat ../tokenized/corpus.shuf.train.tok.en | python ./subword-nmt/apply_bpe.py -c ./bpe.en.model > ./corpus.shuf.train.tok.bpe.en
+
+# 한국어 learn bpe
+python ./subword-nmt/learn_bpe.py --input ../tokenized/corpus.shuf.train.tok.ko --output bpe.ko.model --symbols 30000 --verbose
+# 한국어 apply bpe
+cat ../tokenized/corpus.shuf.train.tok.ko | python ./subword-nmt/apply_bpe.py -c ./bpe.ko.model > ./corpus.shuf.train.tok.bpe.ko
+
+# 이후 valid, test 세트에 대해서도 동일한 조치
+# 주의할 점은, learn_bpe는 train 에서만 가하고, 그 결과물로 도출된 vocab(merge history)를 valid, test에 사용해야 한다는 것이다.
+
+```
