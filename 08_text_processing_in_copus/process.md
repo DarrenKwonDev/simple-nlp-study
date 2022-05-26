@@ -29,3 +29,35 @@ tail -n 202418 ./corpus.shuf.tsv > ./corpus.shuf.test.tsv
 cut -f1 ./corpus.shuf.train.tsv > ./corpus.shuf.train.ko; cut -f2 ./corpus.shuf.train.tsv > ./corpus.shuf.train.en
 # 나머지 valid, test에 대해서도 각각 분리
 ```
+
+4. tokenization
+   - corpus가 이미 정제 작업이 완료된 것이므로 바로 토크나이징을 수행하면 됨
+
+```bash
+# $(pwd) nlp-study/copus/tokenized
+
+# 한국어 mecab tokenization
+cat ../corpus.shuf.test.ko | mecab -O wakati -b 99999 | python ./post_tokenize.py ../corpus.shuf.test.ko > ./corpus.shuf.test.tok.ko
+
+# 영어 tokenization
+cat ../corpus.shuf.test.en | python ./tokenizer.py | python ./post_tokenize.py ../corpus.shuf.test.en > ./corpus.shuf.test.tok.en
+
+# 참고 : detokenize
+head ./corpus.shuf.test.tok.ko | python ./detokenizer.py
+
+```
+
+5. tokenization 끝나고 line수가 같은지 검증
+
+```bash
+wc -l ./corpus.shuf.*.tok.en
+    202418 ./corpus.shuf.test.tok.en
+    1200000 ./corpus.shuf.train.tok.en
+    200000 ./corpus.shuf.valid.tok.en
+    1602418 total
+wc -l ./corpus.shuf.*.tok.ko
+    202418 ./corpus.shuf.test.tok.ko
+    1200000 ./corpus.shuf.train.tok.ko
+    200000 ./corpus.shuf.valid.tok.ko
+    1602418 total
+```
