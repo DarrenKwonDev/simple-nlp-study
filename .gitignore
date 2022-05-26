@@ -26,7 +26,8 @@ workspace
 09_working_with_text_data/data/languages/short_paragraphs
 09_working_with_text_data/data/languages/html
 09_working_with_text_data/data/labeled_faces_wild/lfw_preprocessed/
-copus/ko_en_copus
+copus/ko_en_copus/*.txt
+copus/ko_en_copus/*.xlsx
 nlp_preprocessing
 nmt
 simple-nmt
