@@ -11,6 +11,12 @@ https://aihub.or.kr/aidata/87/download
 https://fasttext.cc/docs/en/pretrained-vectors.html  
 https://nlp.stanford.edu/projects/glove/
 
+## dataset
+
+[KorQuAD](https://korquad.github.io/)  
+[한국어 Wikipedia dump](https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4_%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C)  
+[한국어 말뭉치 모음(제타위키)](https://zetawiki.com/wiki/%ED%95%9C%EA%B5%AD%EC%96%B4_%EB%A7%90%EB%AD%89%EC%B9%98_%EB%AA%A8%EC%9D%8C)
+
 ## cautions
 
 ipython 사용하는 주피터 노트북에서 멀티프로세싱이 안되는 이슈가 있음. workaround가 있긴 한데 아래 글을 참고  

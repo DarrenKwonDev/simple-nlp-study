@@ -31,3 +31,5 @@ corpus/raw/**/*.xlsx
 corpus/**/*.ko
 corpus/**/*.en
 nlp_preprocessing
+/**/*.gz
+cloudkey
