@@ -33,3 +33,4 @@ corpus/**/*.en
 nlp_preprocessing
 /**/*.gz
 cloudkey
+ratsgo-embedding
