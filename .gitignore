@@ -34,3 +34,5 @@ nlp_preprocessing
 /**/*.gz
 cloudkey
 ratsgo-embedding
+deep_learning_scratch_2/deep_learning_scratch_2
+tensorflow-nlp-tutorial
